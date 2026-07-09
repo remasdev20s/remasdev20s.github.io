@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remas Alnofaiee — AI & Mechatronics</title>
+<meta name="description" content="Remas Alnofaiee — CS senior building AI and mechatronics systems. CV, portfolio, and GitHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     EDIT YOUR LINKS in the <a href="..."> tags below (search for TODO)
+     ============================================================ */
+  :root{
+    --ink:#0D1117;          /* page background — dark, like a video frame */
+    --panel:#161C26;        /* card surfaces */
+    --line:#2A3342;         /* hairline borders */
+    --text:#E9EDF3;         /* primary text */
+    --muted:#9AA5B4;        /* secondary text */
+    --caption:#FFD84D;      /* subtitle yellow — the accent */
+    --caption-ink:#1A1400;  /* text on yellow */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    padding:28px 20px 40px;
+    background-image:radial-gradient(ellipse 80% 50% at 50% -10%, #1B2433 0%, transparent 60%);
+  }
+  .card{width:100%;max-width:420px;display:flex;flex-direction:column}
+
+  /* ---------- header ---------- */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);
+    display:flex;align-items:center;gap:8px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";width:7px;height:7px;border-radius:50%;
+    background:var(--caption);
+    box-shadow:0 0 10px var(--caption);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    font-size:clamp(30px,9vw,38px);
+    line-height:1.05;
+    letter-spacing:-.02em;
+  }
+  .role{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:10px;
+    letter-spacing:.02em;
+  }
+  .role b{color:var(--text);font-weight:500}
+
+  /* ---------- the subtitle bar (signature) ---------- */
+  .subtitle-bar{
+    margin:26px 0 8px;
+    background:rgba(0,0,0,.55);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:13px 16px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:14.5px;
+    color:var(--caption);
+    min-height:48px;
+    display:flex;align-items:center;
+  }
+  .subtitle-bar .cursor{
+    display:inline-block;width:8px;height:1.15em;
+    background:var(--caption);margin-left:3px;
+    animation:blink 1s steps(1) infinite;
+    vertical-align:text-bottom;
+  }
+  @keyframes blink{50%{opacity:0}}
+  .subtitle-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:30px;
+    padding-left:2px;
+  }
+
+  /* ---------- summary ---------- */
+  .summary{
+    font-size:15px;line-height:1.65;color:var(--muted);
+    margin-bottom:30px;
+  }
+  .summary strong{color:var(--text);font-weight:500}
+
+  /* ---------- buttons ---------- */
+  .links{display:flex;flex-direction:column;gap:12px}
+  .btn{
+    display:flex;align-items:center;gap:14px;
+    text-decoration:none;
+    border-radius:12px;
+    padding:16px 18px;
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:500;font-size:16px;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:var(--text);
+  }
+  .btn:active{transform:scale(.98)}
+  .btn svg{flex:none;width:20px;height:20px}
+  .btn .sub{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.06em}
+  .btn.primary{
+    background:var(--caption);
+    border-color:var(--caption);
+    color:var(--caption-ink);
+  }
+  .btn.primary .sub{color:rgba(26,20,0,.65)}
+  @media(hover:hover){
+    .btn:hover{border-color:var(--muted)}
+    .btn.primary:hover{background:#FFE27A;border-color:#FFE27A}
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:34px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;color:var(--muted);
+  }
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line);padding-bottom:1px}
+  footer a:hover{color:var(--text)}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--caption);outline-offset:3px}
+
+  @media (prefers-reduced-motion: reduce){
+    .eyebrow::before{animation:none}
+    .subtitle-bar .cursor{animation:none}
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Riyadh · Open to co-ops</p>
+
+    <h1>Remas<br>Alnofaiee</h1>
+    <p class="role"><b>AI/ML</b> × <b>Mechatronics</b> — CS senior</p>
+
+    <div class="subtitle-bar" aria-label="Tagline">
+      <span id="typed">I build AI that listens.</span><span class="cursor" aria-hidden="true"></span>
+    </div>
+    <p class="subtitle-label">live transcript — like my subtitle glasses</p>
+
+    <p class="summary">
+      Computer Science senior building systems where <strong>deep learning meets hardware</strong> —
+      currently developing <strong>AI subtitle glasses</strong> that caption live speech in real time,
+      in <strong>Arabic and English</strong>, for deaf and hard-of-hearing users.
+      Four Udacity Nanodegrees; certified by IBM, KAUST&nbsp;Academy, and Tuwaiq&nbsp;Academy.
+    </p>
+
+    <nav class="links" aria-label="Links">
+      <!-- TODO: replace href with your hosted CV link (Google Drive / GitHub) -->
+      <a class="btn primary" href="#YOUR-CV-LINK">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+        Download my CV
+        <span class="sub">PDF</span>
+      </a>
+
+      <!-- TODO: replace href with your portfolio URL -->
+      <a class="btn" href="#YOUR-PORTFOLIO-LINK">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        View my portfolio
+        <span class="sub">Projects</span>
+      </a>
+
+      <!-- TODO: replace href with your GitHub profile URL -->
+      <a class="btn" href="#YOUR-GITHUB-LINK">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        See my code on GitHub
+        <span class="sub">@remas</span>
+      </a>
+    </nav>
+
+    <footer>
+      <a href="mailto:remassaudoon@gmail.com">remassaudoon@gmail.com</a>
+      <!-- TODO: confirm LinkedIn URL -->
+      <a href="https://www.linkedin.com/in/remas-alnofaiee-646303240">LinkedIn</a>
+    </footer>
+  </main>
+
+<script>
+  // Subtitle bar: types phrases like a live caption feed
+  (function(){
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const el = document.getElementById("typed");
+    const phrases = [
+      "I build AI that listens.",
+      "\u0623\u0628\u0646\u064A \u0630\u0643\u0627\u0621\u064B \u064A\u0633\u0645\u0639.",       // أبني ذكاءً يسمع.
+      "Deep learning \u00d7 hardware.",
+      "Real-time captions, for everyone."
+    ];
+    if (reduce) return; // keep the first phrase static
+
+    let p = 0, i = phrases[0].length, deleting = true;
+    function tick(){
+      const phrase = phrases[p];
+      if (deleting){
+        i--;
+        el.textContent = phrase.slice(0, i);
+        if (i === 0){ deleting = false; p = (p + 1) % phrases.length; setTimeout(tick, 350); return; }
+        setTimeout(tick, 28);
+      } else {
+        const next = phrases[p];
+        i++;
+        el.textContent = next.slice(0, i);
+        // flip text direction for Arabic so it renders naturally
+        el.parentElement.style.direction = /[\u0600-\u06FF]/.test(next) ? "rtl" : "ltr";
+        if (i === next.length){ deleting = true; setTimeout(tick, 2600); return; }
+        setTimeout(tick, 55);
+      }
+    }
+    setTimeout(tick, 2200);
+  })();
+</script>
+</body>
+</html>
